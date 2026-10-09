@@ -1,0 +1,200 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-s3-devkitc-1", "id": "esp", "top": -19.38, "left": -5.03, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 15.6,
+      "left": -274.6,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -32.4,
+      "left": -274.6,
+      "attrs": { "color": "limegreen" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": 73.2,
+      "left": -274.6,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -72.85,
+      "left": -172.8,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -63.25,
+      "left": -172.8,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": -44.05,
+      "left": -172.8,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r4",
+      "top": -34.45,
+      "left": -172.8,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r5",
+      "top": -120.85,
+      "left": 153.6,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r6",
+      "top": 32.75,
+      "left": -182.4,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r7",
+      "top": 176.75,
+      "left": -182.4,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r8",
+      "top": 157.55,
+      "left": -182.4,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r9",
+      "top": 138.35,
+      "left": -182.4,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r10",
+      "top": 119.15,
+      "left": -182.4,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r11",
+      "top": 90.35,
+      "left": -182.4,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r12",
+      "top": 71.15,
+      "left": -182.4,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r13",
+      "top": 51.95,
+      "left": -182.4,
+      "attrs": { "value": "1000" }
+    },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -278.1, "left": -168.6, "attrs": {} },
+    { "type": "wokwi-hc-sr04", "id": "ultrasonic1", "top": -257.7, "left": -42.5, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r14",
+      "top": -120.85,
+      "left": 259.2,
+      "attrs": { "value": "1000" }
+    },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 123.5, "left": 211, "attrs": {} },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 21.6,
+      "left": 213,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled1",
+      "top": -265.66,
+      "left": -335.77,
+      "attrs": { "i2cAddress": "0x3c" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "r1:2", "r2:2", "green", [ "v0" ] ],
+    [ "r2:2", "r3:2", "green", [ "v0" ] ],
+    [ "r3:2", "r4:2", "green", [ "v0" ] ],
+    [ "r1:1", "r2:1", "green", [ "v0" ] ],
+    [ "r2:1", "r3:1", "green", [ "v0" ] ],
+    [ "r3:1", "r4:1", "green", [ "v28.8" ] ],
+    [ "esp:4", "r3:2", "green", [ "h-19.25", "v-76.8" ] ],
+    [ "led2:C", "esp:GND.1", "black", [ "h-38", "v201.6" ] ],
+    [ "r6:2", "r13:2", "yellow", [ "v0" ] ],
+    [ "r13:2", "r12:2", "yellow", [ "v0" ] ],
+    [ "r12:2", "r11:2", "yellow", [ "v0" ] ],
+    [ "r6:1", "r13:1", "yellow", [ "v0" ] ],
+    [ "r13:1", "r12:1", "yellow", [ "v0" ] ],
+    [ "r12:1", "r11:1", "yellow", [ "v9.6" ] ],
+    [ "r10:2", "r9:2", "red", [ "v0" ] ],
+    [ "r9:2", "r8:2", "red", [ "v0" ] ],
+    [ "r8:2", "r7:2", "red", [ "v0" ] ],
+    [ "r7:1", "r8:1", "red", [ "v0" ] ],
+    [ "r8:1", "r9:1", "red", [ "v0" ] ],
+    [ "r9:1", "r10:1", "red", [ "v0" ] ],
+    [ "esp:5", "r6:2", "yellow", [ "h0" ] ],
+    [ "r13:1", "led1:A", "yellow", [ "v0" ] ],
+    [ "r10:1", "led3:A", "green", [ "v0" ] ],
+    [ "esp:6", "r10:2", "green", [ "h-86.45", "v67.2" ] ],
+    [ "led1:C", "esp:GND.1", "black", [ "h-18.8", "v144", "h211.2", "v9.6" ] ],
+    [ "led3:C", "esp:GND.1", "black", [ "v115.2", "h240.4", "v-19.2" ] ],
+    [ "r4:1", "led2:A", "green", [ "v0" ] ],
+    [ "dht1:VCC", "esp:3V3.1", "red", [ "v19.2", "h-57.6", "v144", "h211.25" ] ],
+    [ "dht1:SDA", "esp:9", "gold", [ "v19.2", "h57.7", "v288" ] ],
+    [ "dht1:GND", "esp:GND.1", "black", [ "v38.4", "h-249.6", "v316.8", "h374.45" ] ],
+    [ "ultrasonic1:VCC", "esp:5V", "red", [ "v28.8", "h-19.2", "v336" ] ],
+    [ "ultrasonic1:GND", "esp:GND.2", "black", [ "h56.4", "v172.8" ] ],
+    [ "ultrasonic1:TRIG", "esp:17", "blue", [ "v0" ] ],
+    [ "ultrasonic1:ECHO", "r5:1", "green", [ "v0" ] ],
+    [ "r5:2", "r14:1", "green", [ "v0", "h56.4" ] ],
+    [ "r14:1", "esp:18", "gray", [ "v86.4", "h-240", "v134.4" ] ],
+    [ "r14:2", "esp:GND.2", "black", [ "v0" ] ],
+    [ "pot1:VCC", "esp:3V3.1", "red", [ "v19.2", "h66.4", "v-508.8", "h-384", "v220.8", "h48" ] ],
+    [ "pot1:GND", "esp:GND.4", "black", [ "v0" ] ],
+    [ "pot1:SIG", "esp:1", "magenta", [ "v28.8", "h-0.4", "v0", "h-86.4", "v-182.4" ] ],
+    [ "bz1:1", "esp:GND.4", "black", [ "v0", "h-105.6", "v115.2" ] ],
+    [ "bz1:2", "esp:7", "violet", [ "v9.6", "h-58", "v134.4", "h-163.2", "v-182.4" ] ],
+    [
+      "oled1:GND",
+      "esp:GND.4",
+      "black",
+      [ "v-38.4", "h-96", "v220.8", "h0", "v345.6", "h518.4", "v-48" ]
+    ],
+    [ "oled1:VCC", "esp:3V3.2", "red", [ "v-48", "h240.15", "v326.4", "h9.6" ] ],
+    [ "oled1:SCL", "esp:12", "cyan", [ "v-67.2", "h211.5", "v432", "h0", "v48" ] ],
+    [ "oled1:SDA", "esp:11", "green", [ "v-28.8", "h192.07", "v451.2" ] ]
+  ],
+  "dependencies": {}
+}
